@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, Alert, } from "react-bootstrap";
 
 /* import { useSetCurrentUser } from "../../contexts/CurrentUserContext"; 
 import { useRedirect } from "../../hooks/useRedirect";*/
@@ -9,11 +9,38 @@ import axios from "axios";
 
 
 function SignInForm(){
+    const [signInData, setSignInData ] = useState ({
+        username: "",
+        password: "",
+    });
+
+    const  { username, password } = signInData;
+    
+    const [errors, setErrors] = useState({});
+
+    const history = useHistory();
+
+    const handleChange = (e) => {
+        setSignInData({
+            ...signInData, 
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try { 
+            await axios.post("/dj-rest-auth-/login/", signInData);
+            history.push("/home"); 
+        } catch (err){
+            setErrors(err.response?.data);
+        }
+    };
     return (
         <Container className={styles.Form}>
         <Row className={styles.Row}>
             <Col className="my-auto py-2 p-md-2" md={6}>
-                <Container className={'${appStyles.Content} p-4'}>
+                <Container className={styles.Content}>
                     <h1 className={styles.Header}>Sign In</h1>
                     <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="username">
@@ -31,7 +58,6 @@ function SignInForm(){
                                 {message}
                             </Alert>
                         ))}
-
                     </Form.Group>
                     <Form.Group controlId="password">
                         <Form.Label className="d-none">Password</Form.Label>
@@ -59,9 +85,11 @@ function SignInForm(){
                     ))}
                     </Form>
                 </Container>
-                <Container className={'mt-3 ${appStyles.Content}'}>
+                <br/>
+                <Container>
+                        <p>Don't have an account </p>
                         <Link clasName={styles.Link} to="/signup">
-                            <p>Don't have an account <span>Sign In</span></p>
+                            <span>Sign Up</span>
                       </Link>
                 </Container>
             </Col>

@@ -1,0 +1,25 @@
+.Content{
+    border: 2px solid rgb(191, 187, 187);
+    border-radius: 10px;
+
+}
+.Form{
+    padding: 1rem;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin-right: -35%;
+    text-align: center;
+    color: white;
+}
+.Link span{
+    font-family: "Tsukimi Rounded", sans-serif;
+    font-size: 1rem;
+    color: text;
+    text-decoration: none;
+
+}
+.Link span:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+}

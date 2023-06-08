@@ -1,18 +1,46 @@
 import React, {useState} from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, Alert, } from "react-bootstrap";
 
 import axios from "axios";
 import styles from '../../style/SignInUp.module.css';
 
 function SignUpForm(){
+    const [signUpData, setSignUpData ] = useState ({
+        username: "",
+        password: "",
+        password2: "",
+    });
+    const  { username, password, password2 } = signUpData;
+    
+    const [errors, setErrors] = useState({});
+
+    const history = useHistory();
+
+    const handleChange = (e) => {
+        setSignUpData({
+            ...signUpData, 
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try { 
+            await axios.post("/dj-rest-auth-registration/", signUpData);
+            history.push("/signin"); 
+        } catch (err){
+            setErrors(err.response?.data);
+        }
+    };
+
     return (
         <Container className={styles.Form}>
         <Row className={styles.Row}>
             <Col className="my-auto py-2 p-md-2" md={9}>
-                <Container className={'${appStyles.Content} p-4'}>
+                <Container className={styles.Content}>
                     <h1 className={styles.Header}>Sign Up</h1>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} >
                     <Form.Group controlId="username">
                         <Form.Label className="d-none">Username:</Form.Label>
                         <Form.Control 
@@ -72,10 +100,12 @@ function SignUpForm(){
                     ))}
                     </Form>
                 </Container>
-                <Container className={'mt-3 ${appStyles.Content}'}>
+                <br/>
+                <Container >
+                        <p> Already have an account</p>
                         <Link clasName={styles.Link} to="/signin">
-                           <p> Already have an account <span>Sign In</span></p>
-                      </Link>
+                           <span>Sign In</span>  
+                        </Link>
                 </Container>
             </Col>
         </Row>

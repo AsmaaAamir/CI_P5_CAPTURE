@@ -1,16 +1,18 @@
 import React from "react";
-import styles from "../../src/style/WelcomePage.module.css";
+import styles from '../../src/style/WelcomePage.module.css';
 import { NavLink } from "react-router-dom";
+
+
 
 /* Welcome page wih option ot sign in and sign up */
 
 const Welcomepage = () => {
     return (
-        <div className={styles.Container}>
-            <div>
-                <div className="col-md-8 offset=md-2 Text">
+        <div>
+            <div className={styles.Container}>
+                <div className="col-md offset=md Text">
                     <h1 className={styles.Text}>Capture</h1>
-                    <p className="text-center">
+                    <p className="text-">
                         <br/>
                         <h3>Welcome!</h3>
                         <br/>
@@ -26,11 +28,21 @@ const Welcomepage = () => {
                         </NavLink>
                     </div>
                 </div>
-            </div>
+            </div>    
+            <div className={styles.Footer}>
+                <NavLink  to="/home" >
+                    <i class="fa-solid fa-house"></i>
+                </NavLink>
+                <NavLink  to="/profile" >
+                     <i class="fa-solid fa-user"></i>
+                </NavLink>
+
+            </div>    
+        
         </div>
-      
+        
     );
-};
+}
 
 
 export default Welcomepage;

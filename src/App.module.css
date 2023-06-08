@@ -11,16 +11,14 @@
     padding-top: 81px;
     color:white;
 }
-a {
-    transition: ease-in-out 0.4s;
-}
+
 
 a:hover {
     text-decoration: none;
 }
 a:hover i {
     color:#282c34;
-    transition: ease-in-out 0.4s;
+    transform: scale(1.5);
 }
 i:hover {
     cursor: pointer;

@@ -2,12 +2,15 @@
     border-radius: 10px;
 }
 
-
 .NavLink i {
     color: black;
 }
 .NavLink span{
     padding: 5px;
+    color: black;
+}
+.NavLink span:hover{
+    color: rgb(65, 63, 63);
 }
 
 .Active i {

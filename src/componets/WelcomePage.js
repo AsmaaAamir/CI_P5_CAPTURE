@@ -7,11 +7,11 @@ import { NavLink } from "react-router-dom";
 const Welcomepage = () => {
     return (
         <div className={styles.Container}>
-            <div className="row">
+            <div>
                 <div className="col-md-8 offset=md-2 Text">
                     <h1 className={styles.Text}>Capture</h1>
                     <p className="text-center">
-                        <hr/>
+                        <br/>
                         <h3>Welcome!</h3>
                         <br/>
                         Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!

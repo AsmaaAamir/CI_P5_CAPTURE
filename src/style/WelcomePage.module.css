@@ -1,16 +1,20 @@
 
 .Container{
-    margin: auto;
     width: 70%;
     height: 50%;
     border: 2px solid rgb(191, 187, 187);
     border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
     color:white;
+    padding: 1rem;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    margin-right: -25%;
     text-align: center;
 
+}
+.Line{
+    color: white;
 }
 .Text{
     font-size: 500%;

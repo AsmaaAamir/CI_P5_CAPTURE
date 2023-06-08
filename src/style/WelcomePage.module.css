@@ -1,12 +1,8 @@
-body{
-    margin: 0;
-    padding: 0;
-}
+
 .Container{
     margin: auto;
     width: 70%;
-    height: 70%;
-    padding: 10px;
+    height: 50%;
     border: 2px solid rgb(191, 187, 187);
     border-radius: 10px;
     align-items: center;

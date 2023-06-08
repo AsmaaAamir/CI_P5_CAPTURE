@@ -15,7 +15,7 @@ const NavBar = () => {
                 </NavLink>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto text-left">
+            <Nav className="ml-auto text-left">
                 <NavLink 
                     to="/home"
                     className={styles.NavLink}

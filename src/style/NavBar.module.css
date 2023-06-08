@@ -1,7 +1,9 @@
 .Logo{
     border-radius: 10px;
 }
-
+.NavBar{
+    background-color: grey;
+}
 .NavLink i {
     color: black;
 }

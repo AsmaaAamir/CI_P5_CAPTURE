@@ -1,0 +1,15 @@
+.Logo{
+    border-radius: 10px;
+}
+
+
+.NavLink i {
+    color: black;
+}
+.NavLink span{
+    padding: 5px;
+}
+
+.Active i {
+    color: rgb(58, 55, 55);
+}

@@ -103,7 +103,7 @@ function SignUpForm(){
                 <br/>
                 <Container >
                         <p> Already have an account</p>
-                        <Link clasName={styles.Link} to="/signin">
+                        <Link className={styles.Link} to="/signin">
                            <span>Sign In</span>  
                         </Link>
                 </Container>

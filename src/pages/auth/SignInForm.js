@@ -41,7 +41,9 @@ function SignInForm(){
         <Row className={styles.Row}>
             <Col className="my-auto py-2 p-md-2" md={6}>
                 <Container className={styles.Content}>
+                    <br/>
                     <h1 className={styles.Header}>Sign In</h1>
+                    <br/>
                     <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="username">
                         <Form.Label className="d-none">Username:</Form.Label>
@@ -83,12 +85,13 @@ function SignInForm(){
                         {message}
                     </Alert>
                     ))}
+                    <br/>  
                     </Form>
                 </Container>
                 <br/>
                 <Container>
                         <p>Don't have an account </p>
-                        <Link clasName={styles.Link} to="/signup">
+                        <Link className={styles.Link} to="/signup">
                             <span>Sign Up</span>
                       </Link>
                 </Container>

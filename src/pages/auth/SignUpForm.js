@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button, Col, Row, Container, Alert, } from "react-bootstrap";
-
 import axios from "axios";
+
 import styles from '../../style/SignInUp.module.css';
 
-function SignUpForm(){
+const SignUpForm =() => {
+    
     const [signUpData, setSignUpData ] = useState ({
         username: "",
         password: "",
         password2: "",
     });
+
     const  { username, password, password2 } = signUpData;
     
     const [errors, setErrors] = useState({});

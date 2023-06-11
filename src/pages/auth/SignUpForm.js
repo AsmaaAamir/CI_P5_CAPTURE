@@ -5,7 +5,7 @@ import axios from "axios";
 
 import styles from '../../style/SignInUp.module.css';
 
-const SignUpForm =() => {
+const SignUpForm = () => {
     
     const [signUpData, setSignUpData ] = useState ({
         username: "",

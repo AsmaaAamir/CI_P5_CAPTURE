@@ -2,13 +2,16 @@ import React, {useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Form, Button, Col, Row, Container, Alert, } from "react-bootstrap";
 
-/* import { useSetCurrentUser } from "../../contexts/CurrentUserContext"; 
-import { useRedirect } from "../../hooks/useRedirect";*/
+import { useSetCurrentUser } from "../../context/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 import styles from '../../style/SignInUp.module.css';
 import axios from "axios";
 
 
 function SignInForm(){
+    const setCurrentUser = useSetCurrentUser();
+    useRedirect("loggedIn")
+
     const [signInData, setSignInData ] = useState ({
         username: "",
         password: "",
